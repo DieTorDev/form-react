@@ -13,4 +13,10 @@ const StyledTitle = styled.h1`
 	padding-inline: 68px;
 `;
 
-export { StyledHeader, StyledTitle };
+const StyledText = styled.p`
+	font-size: 16px;
+	font-weight: medium;
+	line-height: 26px;
+`;
+
+export { StyledHeader, StyledTitle, StyledText };
