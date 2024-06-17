@@ -5,6 +5,11 @@ const StyledFormContainer = styled.section`
 	flex-direction: column;
 	gap: 24px;
 	margin-top: 64px;
+	@media (min-width: 992px) {
+		width: 1440px;
+		height: 90vh;
+		margin-block: 40px;
+	}
 `;
 
 const StyledForm = styled.form`
@@ -15,12 +20,17 @@ const StyledForm = styled.form`
 	background-color: white;
 	border-radius: 10px;
 	box-shadow: 0px 8px 0px 0px rgb(0, 0, 0, 0.2);
+
+	@media (min-width: 992px) {
+		padding: 40px;
+		gap: 20px;
+	}
 `;
 
 const StyledInput = styled.input`
 	padding-left: 20px;
 	height: 56px;
-	border: 2px solid #dedede;
+	border: 2px solid ${({ $isValid }) => ($isValid ? '#dedede' : '#FF7979')};
 	border-radius: 6px;
 	color: #3d3b35;
 	font-family: 'Poppins', sans-serif;

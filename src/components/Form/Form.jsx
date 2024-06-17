@@ -6,6 +6,7 @@ import {
 	StyledInput,
 	StyledSubmit
 } from './form.styles';
+import { INPUT_INFO } from '../../constants/input-info';
 
 const Form = () => {
 	const [formData, setFormData] = useState({
@@ -27,45 +28,19 @@ const Form = () => {
 		<StyledFormContainer>
 			<Banner />
 			<StyledForm onClick={event => handleSubmit(event)}>
-				<StyledInput
-					onChange={event =>
-						changeFormValues(event.target, formData, setFormData)
-					}
-					type='text'
-					name='name'
-					placeholder='First Name'
-				/>
-				<StyledInput
-					onChange={event =>
-						changeFormValues(event.target, formData, setFormData)
-					}
-					type='text'
-					name='lastname'
-					placeholder='Last Name'
-				/>
-				<StyledInput
-					onChange={event =>
-						changeFormValues(event.target, formData, setFormData)
-					}
-					type='text'
-					name='email'
-					placeholder='Email Address'
-				/>
-				<StyledInput
-					onChange={event =>
-						changeFormValues(event.target, formData, setFormData)
-					}
-					type='text'
-					name='password'
-					placeholder='Password'
-				/>
-				<StyledSubmit
-					onChange={event =>
-						changeFormValues(event.target, formData, setFormData)
-					}
-					type='submit'
-					value='CLAIM YOUR FREE TRIAL'
-				/>
+				{INPUT_INFO.map(input => (
+					<StyledInput
+						key={input.id}
+						onChange={event =>
+							changeFormValues(event.target, formData, setFormData)
+						}
+						type='text'
+						name={input.name}
+						placeholder={input.placeholder}
+						$isValid={formData.errors[input.name]}
+					/>
+				))}
+				<StyledSubmit type='submit' value='CLAIM YOUR FREE TRIAL' />
 			</StyledForm>
 		</StyledFormContainer>
 	);

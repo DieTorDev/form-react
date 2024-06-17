@@ -11,6 +11,12 @@ const StyledTitle = styled.h1`
 	line-height: 36px;
 	letter-spacing: -0.29px;
 	padding-inline: 68px;
+
+	@media (min-width: 992px) {
+		font-size: 50px;
+		line-height: 46px;
+		padding-inline: 40px;
+	}
 `;
 
 const StyledText = styled.p`

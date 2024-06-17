@@ -15,6 +15,8 @@ export const GlobalStyles = createGlobalStyle`
   body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    background-image: url('/images/bg-intro-mobile.png');
+    background-color: #ff7979;
   }
 
   a{

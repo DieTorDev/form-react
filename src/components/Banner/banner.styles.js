@@ -15,6 +15,13 @@ const StyledBanner = styled.p`
 	text-align: center;
 	border-radius: 8px;
 	box-shadow: 0px 8px 0px 0px rgb(0, 0, 0, 0.2);
+
+	@media (min-width: 768px) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+	}
 `;
 
 export { StyledBanner };
