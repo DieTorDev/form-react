@@ -15,10 +15,10 @@ const Form = () => {
 		email: '',
 		password: '',
 		errors: {
-			name: false,
-			lastname: false,
-			email: false,
-			password: false
+			name: true,
+			lastname: true,
+			email: true,
+			password: true
 		}
 	});
 

@@ -37,6 +37,15 @@ const StyledInput = styled.input`
 	font-size: 14px;
 	font-weight: bold;
 	letter-spacing: 0.25px;
+	position: relative;
+
+	&::after {
+		content: '!';
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		background-color: #ff7979;
+	}
 `;
 
 const StyledSubmit = styled(StyledInput)`
@@ -44,6 +53,7 @@ const StyledSubmit = styled(StyledInput)`
 	color: white;
 	border: none;
 	box-shadow: 0px 8px 0px 0px #2b9f6c;
+	cursor: pointer;
 `;
 
 export { StyledFormContainer, StyledForm, StyledInput, StyledSubmit };
