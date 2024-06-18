@@ -4,9 +4,10 @@ export const INPUT_INFO = [
 	{
 		id: v4(),
 		name: 'name',
-		placeholder: 'First Name'
+		placeholder: 'First Name',
+		type: 'text'
 	},
-	{ id: v4(), name: 'lastname', placeholder: 'Last Name' },
-	{ id: v4(), name: 'email', placeholder: 'Email Address' },
-	{ id: v4(), name: 'password', placeholder: 'Password' }
+	{ id: v4(), name: 'lastname', placeholder: 'Last Name', type: 'text' },
+	{ id: v4(), name: 'email', placeholder: 'Email Address', type: 'email' },
+	{ id: v4(), name: 'password', placeholder: 'Password', type: 'password' }
 ];

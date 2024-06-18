@@ -4,6 +4,7 @@ import {
 	StyledForm,
 	StyledFormContainer,
 	StyledInput,
+	StyledInputContainer,
 	StyledSubmit
 } from './form.styles';
 import { INPUT_INFO } from '../../constants/input-info';
@@ -29,16 +30,18 @@ const Form = () => {
 			<Banner />
 			<StyledForm onClick={event => handleSubmit(event)}>
 				{INPUT_INFO.map(input => (
-					<StyledInput
+					<StyledInputContainer
 						key={input.id}
-						onChange={event =>
-							changeFormValues(event.target, formData, setFormData)
-						}
-						type='text'
-						name={input.name}
-						placeholder={input.placeholder}
 						$isValid={formData.errors[input.name]}
-					/>
+					>
+						<StyledInput
+							onChange={event =>
+								changeFormValues(event.target, formData, setFormData)
+							}
+							{...input}
+							$isValid={formData.errors[input.name]}
+						/>
+					</StyledInputContainer>
 				))}
 				<StyledSubmit type='submit' value='CLAIM YOUR FREE TRIAL' />
 			</StyledForm>

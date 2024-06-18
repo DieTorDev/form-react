@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { css, styled } from 'styled-components';
 
 const StyledFormContainer = styled.section`
 	display: flex;
@@ -9,6 +9,7 @@ const StyledFormContainer = styled.section`
 		width: 1440px;
 		height: 90vh;
 		margin-block: 40px;
+		justify-content: center;
 	}
 `;
 
@@ -27,8 +28,30 @@ const StyledForm = styled.form`
 	}
 `;
 
+const StyledInputContainer = styled.div`
+	width: 100%;
+	position: relative;
+	${({ $isValid }) =>
+		!$isValid &&
+		css`
+			&::after {
+				content: '!';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: #ff7979;
+				color: white;
+				border-radius: 50%;
+				text-align: center;
+				right: 20px;
+				transform: translateY(50%);
+			}
+		`}
+`;
+
 const StyledInput = styled.input`
 	padding-left: 20px;
+	width: 100%;
 	height: 56px;
 	border: 2px solid ${({ $isValid }) => ($isValid ? '#dedede' : '#FF7979')};
 	border-radius: 6px;
@@ -38,14 +61,6 @@ const StyledInput = styled.input`
 	font-weight: bold;
 	letter-spacing: 0.25px;
 	position: relative;
-
-	&::after {
-		content: '!';
-		position: absolute;
-		width: 20px;
-		height: 20px;
-		background-color: #ff7979;
-	}
 `;
 
 const StyledSubmit = styled(StyledInput)`
@@ -56,4 +71,10 @@ const StyledSubmit = styled(StyledInput)`
 	cursor: pointer;
 `;
 
-export { StyledFormContainer, StyledForm, StyledInput, StyledSubmit };
+export {
+	StyledFormContainer,
+	StyledForm,
+	StyledInput,
+	StyledSubmit,
+	StyledInputContainer
+};
