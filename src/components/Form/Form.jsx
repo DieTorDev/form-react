@@ -23,8 +23,6 @@ const Form = () => {
 		}
 	});
 
-	console.log(formData);
-
 	return (
 		<StyledFormContainer>
 			<Banner />
